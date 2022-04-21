@@ -5,6 +5,12 @@ FactoryBot.define do
     description { Faker::Food.description[0..100] }
   end
 
+  factory :invalid_menu, parent: :menu do
+    name { nil }
+    description { nil }
+    price { nil }
+  end
+
   factory :invalid_description, parent: :menu do
     name { Faker::Food.dish }
     price { Faker::Number.positive }
