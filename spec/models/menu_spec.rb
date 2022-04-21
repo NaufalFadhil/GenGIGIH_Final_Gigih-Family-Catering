@@ -5,85 +5,56 @@ RSpec.describe Menu, type: :model do
     expect(FactoryBot.build(:menu)).to be_valid
   end
 
-  it 'is valid with a name and a description' do
-    menu = Menu.new(
-      name: 'Nasi Uduk',
-      price: 15000.0,
-      description: 'Betawi style steamed rice cooked in coconut milk. Delicious!'
-    )
-
-    expect(FactoryBot.build(:menu)).to be_valid
-  end
-
-  it 'is invalid without a name' do
-    menu = Menu.new(
-      name: nil,
-      description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
-      price: 15000.0
-    )
-
-    menu.valid?
-    expect(menu.errors[:name]).to include("can't be blank")
-  end
-
-  it 'is invalid without a price' do
-    menu = Menu.new(
-      name: 'Nasi Uduk',
-      price: nil,
-      description: 'Betawi style steamed rice cooked in coconut milk. Delicious!'
-    )
-
-    menu.valid?
-    expect(menu.errors[:price]).to include("can't be blank")
-  end
-
-  it 'is invalid without a description' do
-    menu = Menu.new(
-      name: 'Nasi Uduk',
-      price: 15000.0,
-      description: nil
-    )
-
-    menu.valid?
-    expect(menu.errors[:description]).to include("can't be blank")
-  end
-
-  it "is invalid with a duplicate name" do
-    menu1 = Menu.create(
-      name: "Nasi Uduk",
-      description: "Betawi style steamed rice cooked in coconut milk. Delicious!",
-      price: 10000.0
-    )
+  describe "Field name test" do
+    it 'is valid with a name and a description' do
+      expect(FactoryBot.build(:menu)).to be_valid
+    end
     
-    menu2 = Menu.new(
-      name: "Nasi Uduk",
-      description: "Just with a different description.",
-      price: 10000.0
-    )
-
-    menu2.valid?
-    expect(menu2.errors[:name]).to include("has already been taken")
+    it 'is invalid without a name' do
+      menu = FactoryBot.build(:menu, name: nil)
+      menu.valid?
+      
+      expect(menu.errors[:name]).to include("can't be blank")
+    end
+  
+    it "is invalid with a duplicate name" do
+      menu1 = FactoryBot.create(:menu, name: "Nasi Uduk")
+      menu2 = FactoryBot.build(:menu, name: "Nasi Uduk")
+      menu2.valid?
+      
+      expect(menu2.errors[:name]).to include("has already been taken")
+    end
   end
 
-  it 'is invalid with non numeric values' do
-      menu = Menu.new(
-        name: "Nasi uduk",
-        description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
-        price: "goceng"
-      )
-  
+  describe "Field price test" do
+    it 'is invalid without a price' do
+      menu = FactoryBot.build(:menu, price: nil)
       menu.valid?
+      
+      expect(menu.errors[:price]).to include("can't be blank")
+    end
+    
+    it 'is invalid with non numeric values' do
+      menu = FactoryBot.build(:menu, price: "goceng")
+      menu.valid?
+      
       expect(menu.errors[:price]).to include("is not a number")
     end
+  
+    it 'is invalid with price less than 0.01' do
+      menu = FactoryBot.build(:menu, price: -200.0)
+      menu.valid?
+      
+      expect(menu.errors[:price]).to include("must be greater than or equal to 0.01")
+    end
+  end
 
-  it 'is invalid with price less than 0.01' do
-    menu = Menu.new(
-      name: "Nasi uduk",
-      description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
-      price: -200.0
-    )
-
-    menu.valid?
-    expect(menu.errors[:price]).to include("must be greater than or equal to 0.01")
+  describe "Field description test" do
+    it 'is invalid without a description' do
+      menu = FactoryBot.build(:menu, description: nil)
+      menu.valid?
+      
+      expect(menu.errors[:description]).to include("can't be blank")
+    end
   end
 end
