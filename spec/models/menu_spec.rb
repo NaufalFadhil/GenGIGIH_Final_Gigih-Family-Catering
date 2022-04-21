@@ -1,8 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Menu, type: :model do
-  it "has a valid factory" do
-    expect(FactoryBot.build(:menu)).to be_valid
+  describe "Factory test" do
+    it "has a valid factory :menu" do
+      expect(FactoryBot.build(:menu)).to be_valid
+    end
+  
+    it "has a invalid factory :invalid_description" do
+      expect(FactoryBot.build(:invalid_description)).to be_invalid
+    end
   end
 
   describe "Field name test" do
@@ -55,6 +61,13 @@ RSpec.describe Menu, type: :model do
       menu.valid?
       
       expect(menu.errors[:description]).to include("can't be blank")
+    end
+
+    it 'is invalid with 150 word of description' do
+      menu = FactoryBot.build(:invalid_description)
+      menu.valid?
+      
+      expect(menu.errors[:description]).to include("is too long (maximum is 150 characters)")
     end
   end
 end
