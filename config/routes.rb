@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :menu_categories
   resources :menus
-  resources :item_categories
   resources :categories
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

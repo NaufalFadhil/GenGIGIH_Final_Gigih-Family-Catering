@@ -12,10 +12,10 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/item_categories", type: :request do
+RSpec.describe "/menu_categories", type: :request do
   
   # This should return the minimal set of attributes required to create a valid
-  # ItemCategory. As you add validations to ItemCategory, be sure to
+  # MenuCategory. As you add validations to MenuCategory, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -27,58 +27,58 @@ RSpec.describe "/item_categories", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      ItemCategory.create! valid_attributes
-      get item_categories_url
+      MenuCategory.create! valid_attributes
+      get menu_categories_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
-      item_category = ItemCategory.create! valid_attributes
-      get item_category_url(item_category)
+      menu_category = MenuCategory.create! valid_attributes
+      get menu_category_url(menu_category)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_item_category_url
+      get new_menu_category_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
     it "renders a successful response" do
-      item_category = ItemCategory.create! valid_attributes
-      get edit_item_category_url(item_category)
+      menu_category = MenuCategory.create! valid_attributes
+      get edit_menu_category_url(menu_category)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new ItemCategory" do
+      it "creates a new MenuCategory" do
         expect {
-          post item_categories_url, params: { item_category: valid_attributes }
-        }.to change(ItemCategory, :count).by(1)
+          post menu_categories_url, params: { menu_category: valid_attributes }
+        }.to change(MenuCategory, :count).by(1)
       end
 
-      it "redirects to the created item_category" do
-        post item_categories_url, params: { item_category: valid_attributes }
-        expect(response).to redirect_to(item_category_url(ItemCategory.last))
+      it "redirects to the created menu_category" do
+        post menu_categories_url, params: { menu_category: valid_attributes }
+        expect(response).to redirect_to(menu_category_url(MenuCategory.last))
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new ItemCategory" do
+      it "does not create a new MenuCategory" do
         expect {
-          post item_categories_url, params: { item_category: invalid_attributes }
-        }.to change(ItemCategory, :count).by(0)
+          post menu_categories_url, params: { menu_category: invalid_attributes }
+        }.to change(MenuCategory, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post item_categories_url, params: { item_category: invalid_attributes }
+        post menu_categories_url, params: { menu_category: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -90,42 +90,42 @@ RSpec.describe "/item_categories", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested item_category" do
-        item_category = ItemCategory.create! valid_attributes
-        patch item_category_url(item_category), params: { item_category: new_attributes }
-        item_category.reload
+      it "updates the requested menu_category" do
+        menu_category = MenuCategory.create! valid_attributes
+        patch menu_category_url(menu_category), params: { menu_category: new_attributes }
+        menu_category.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the item_category" do
-        item_category = ItemCategory.create! valid_attributes
-        patch item_category_url(item_category), params: { item_category: new_attributes }
-        item_category.reload
-        expect(response).to redirect_to(item_category_url(item_category))
+      it "redirects to the menu_category" do
+        menu_category = MenuCategory.create! valid_attributes
+        patch menu_category_url(menu_category), params: { menu_category: new_attributes }
+        menu_category.reload
+        expect(response).to redirect_to(menu_category_url(menu_category))
       end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        item_category = ItemCategory.create! valid_attributes
-        patch item_category_url(item_category), params: { item_category: invalid_attributes }
+        menu_category = MenuCategory.create! valid_attributes
+        patch menu_category_url(menu_category), params: { menu_category: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested item_category" do
-      item_category = ItemCategory.create! valid_attributes
+    it "destroys the requested menu_category" do
+      menu_category = MenuCategory.create! valid_attributes
       expect {
-        delete item_category_url(item_category)
-      }.to change(ItemCategory, :count).by(-1)
+        delete menu_category_url(menu_category)
+      }.to change(MenuCategory, :count).by(-1)
     end
 
-    it "redirects to the item_categories list" do
-      item_category = ItemCategory.create! valid_attributes
-      delete item_category_url(item_category)
-      expect(response).to redirect_to(item_categories_url)
+    it "redirects to the menu_categories list" do
+      menu_category = MenuCategory.create! valid_attributes
+      delete menu_category_url(menu_category)
+      expect(response).to redirect_to(menu_categories_url)
     end
   end
 end

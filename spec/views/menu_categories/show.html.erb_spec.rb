@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "item_categories/show", type: :view do
+RSpec.describe "menu_categories/show", type: :view do
   before(:each) do
-    @item_category = assign(:item_category, ItemCategory.create!(
-      item_id: 2,
-      cetegory_id: 3
+    @menu_category = assign(:menu_category, MenuCategory.create!(
+      menu_id: 2,
+      category_id: 3
     ))
   end
 
