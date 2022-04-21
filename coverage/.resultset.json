@@ -1,0 +1,193 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/spec/models/category_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/spec/rails_helper.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/spec/factories/categories.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/spec/factories/menu_categories.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/spec/factories/menus.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/app/helpers/categories_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/app/helpers/menu_categories_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/app/helpers/menus_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/spec/support/factory_bot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/app/models/category.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/spec/models/menu_category_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/app/models/menu_category.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/spec/models/menu_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/runner/Gigih-Family-Catering-NaufalFadhil/app/models/menu.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1650520763
+  }
+}
