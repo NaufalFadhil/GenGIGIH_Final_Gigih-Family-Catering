@@ -3,4 +3,5 @@ class Menu < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true, numericality: true
   validates :description, presence: true
+  validates_numericality_of :price, :greater_than_or_equal_to => 0.01
 end
