@@ -62,7 +62,17 @@ RSpec.describe Menu, type: :model do
     )
 
     menu2.valid?
-    
     expect(menu2.errors[:name]).to include("has already been taken")
   end
+
+  it 'is invalid with non numeric values' do
+      menu = Menu.new(
+        name: "Nasi uduk",
+        description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
+        price: "goceng"
+      )
+  
+      menu.valid?
+      expect(menu.errors[:price]).to include("is not a number")
+    end
 end
