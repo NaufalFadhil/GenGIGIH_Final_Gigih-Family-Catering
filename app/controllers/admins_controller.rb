@@ -57,6 +57,26 @@ class AdminsController < ApplicationController
     end
   end
 
+  def login
+  end
+
+  def check_admin
+    username = params['username']
+    password = params['password']
+    
+    admin = Admin.find_by(username: username)
+    
+    if admin
+      if admin.password === password
+        redirect_to '/orders'
+      else
+        redirect_to '/login'
+      end
+    else
+      redirect_to '/login'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin

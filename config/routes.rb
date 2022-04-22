@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/', to: 'menus#menu_list'
+  get '/login', to: 'admins#login'
+  post '/login', to: 'admins#check_admin'
   resources :orders
   resources :order_details
   resources :admins
