@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/', to: 'menus#menu_list'
   resources :orders
   resources :order_details
   resources :admins

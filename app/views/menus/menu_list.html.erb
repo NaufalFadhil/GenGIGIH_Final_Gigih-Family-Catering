@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Menu List</h1>
+  
+  <div id="menus">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @menus.each do |menu| %>
+          <tr>
+            <td><%= menu.name %></td>
+            <td><%= menu.price %></td>
+            <td><%= link_to "Detail menu", menu %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+          
+</div>
