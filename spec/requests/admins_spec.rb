@@ -12,10 +12,10 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/users", type: :request do
+RSpec.describe "/admins", type: :request do
   
   # This should return the minimal set of attributes required to create a valid
-  # User. As you add validations to User, be sure to
+  # Admin. As you add validations to Admin, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -27,58 +27,58 @@ RSpec.describe "/users", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      User.create! valid_attributes
-      get users_url
+      Admin.create! valid_attributes
+      get admins_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
-      user = User.create! valid_attributes
-      get user_url(user)
+      admin = Admin.create! valid_attributes
+      get admin_url(admin)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_user_url
+      get new_admin_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
     it "renders a successful response" do
-      user = User.create! valid_attributes
-      get edit_user_url(user)
+      admin = Admin.create! valid_attributes
+      get edit_admin_url(admin)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new User" do
+      it "creates a new Admin" do
         expect {
-          post users_url, params: { user: valid_attributes }
-        }.to change(User, :count).by(1)
+          post admins_url, params: { admin: valid_attributes }
+        }.to change(Admin, :count).by(1)
       end
 
-      it "redirects to the created user" do
-        post users_url, params: { user: valid_attributes }
-        expect(response).to redirect_to(user_url(User.last))
+      it "redirects to the created admin" do
+        post admins_url, params: { admin: valid_attributes }
+        expect(response).to redirect_to(admin_url(Admin.last))
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new User" do
+      it "does not create a new Admin" do
         expect {
-          post users_url, params: { user: invalid_attributes }
-        }.to change(User, :count).by(0)
+          post admins_url, params: { admin: invalid_attributes }
+        }.to change(Admin, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post users_url, params: { user: invalid_attributes }
+        post admins_url, params: { admin: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -90,42 +90,42 @@ RSpec.describe "/users", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested user" do
-        user = User.create! valid_attributes
-        patch user_url(user), params: { user: new_attributes }
-        user.reload
+      it "updates the requested admin" do
+        admin = Admin.create! valid_attributes
+        patch admin_url(admin), params: { admin: new_attributes }
+        admin.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the user" do
-        user = User.create! valid_attributes
-        patch user_url(user), params: { user: new_attributes }
-        user.reload
-        expect(response).to redirect_to(user_url(user))
+      it "redirects to the admin" do
+        admin = Admin.create! valid_attributes
+        patch admin_url(admin), params: { admin: new_attributes }
+        admin.reload
+        expect(response).to redirect_to(admin_url(admin))
       end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        user = User.create! valid_attributes
-        patch user_url(user), params: { user: invalid_attributes }
+        admin = Admin.create! valid_attributes
+        patch admin_url(admin), params: { admin: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested user" do
-      user = User.create! valid_attributes
+    it "destroys the requested admin" do
+      admin = Admin.create! valid_attributes
       expect {
-        delete user_url(user)
-      }.to change(User, :count).by(-1)
+        delete admin_url(admin)
+      }.to change(Admin, :count).by(-1)
     end
 
-    it "redirects to the users list" do
-      user = User.create! valid_attributes
-      delete user_url(user)
-      expect(response).to redirect_to(users_url)
+    it "redirects to the admins list" do
+      admin = Admin.create! valid_attributes
+      delete admin_url(admin)
+      expect(response).to redirect_to(admins_url)
     end
   end
 end

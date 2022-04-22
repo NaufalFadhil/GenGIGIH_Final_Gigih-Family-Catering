@@ -5,12 +5,12 @@ RSpec.describe "order_details/index", type: :view do
     assign(:order_details, [
       OrderDetail.create!(
         order_id: 2,
-        item_id: 3,
+        menu_id: 3,
         quantity: 4
       ),
       OrderDetail.create!(
         order_id: 2,
-        item_id: 3,
+        menu_id: 3,
         quantity: 4
       )
     ])
