@@ -68,13 +68,16 @@ class AdminsController < ApplicationController
     
     if admin
       if admin.password === password
-        redirect_to '/orders'
+        redirect_to '/features'
       else
         redirect_to '/login'
       end
     else
       redirect_to '/login'
     end
+  end
+
+  def features
   end
 
   private
