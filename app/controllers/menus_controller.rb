@@ -61,6 +61,10 @@ class MenusController < ApplicationController
     @menus = Menu.all
   end
 
+  def public_menu_detail
+    @menu = Menu.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_menu

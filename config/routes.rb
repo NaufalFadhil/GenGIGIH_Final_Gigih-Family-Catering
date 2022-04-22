@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login', to: 'admins#check_admin'
 
   get '/features', to: 'admins#features'
+
+  get '/public/menu/:id', to: 'menus#public_menu_detail'
   
   resources :orders
   resources :order_details
