@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :order_details
   resources :admins
-  resources :orders
   resources :customers
   resources :menu_categories
   resources :menus
