@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsRuby3</title>
+    <title>CatRing SiGIGIH</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,13 +14,16 @@
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
         <div class="container">
-          <a class="navbar-brand">CAT:ring</a>
+          <a href="/" class="navbar-brand">CAT:ring</a>
           <form class="d-flex">
             <a href="/login" class="btn btn-dark">Admin</a>
           </form>
         </div>
       </div>
     </nav>
-    <%= yield %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
