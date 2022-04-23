@@ -1,3 +1,23 @@
+# Naufal Fadhil's Documentation
+### Get started
+```console
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+```
+
+Start use `RUN` button on replit or `$ rails server`
+
+### Administrator Login
+- Username: admin
+- Password: admin
+
+### Notebook
+Hit `refresh status` Button for handling if customer not paid before 5 PM and it will be change from `NEW` to `CANCELED`
+
+All feature menu at `/features`, or you can login first as administrator 
+
 # Rails on Replit
 
 This is a template to get you started with Rails on Replit. It's ready to go so you can just hit run and start coding!

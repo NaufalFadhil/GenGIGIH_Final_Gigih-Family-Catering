@@ -1,5 +1,8 @@
 class Menu < ApplicationRecord
-  has_many :item_category
+  has_many :menu_categories
+  has_many :categories, through: :menu_categories
+  has_many :order_detail
+  
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true, numericality: true
   validates :description, presence: true, length: {maximum: 150}

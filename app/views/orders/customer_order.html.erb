@@ -1,0 +1,29 @@
+<h1>Customer Order List</h1>
+
+<a href="#" class="btn btn-dark my-3">Refresh status</a>
+<div id="menus">
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Order by</th>
+        <th scope="col">Status</th>
+        <th scope="col">Order date</th>
+        <th scope="col">Created by</th>
+        <th scope="col">Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.customer.name %></td>
+          <td><%= order.status %></td>
+          <td><%= order.order_date %></td>
+          <td><%= order.admin.username %></td>
+          <td>
+            <a href="/customer_order/<%= order.id %>">Detail Order</a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
