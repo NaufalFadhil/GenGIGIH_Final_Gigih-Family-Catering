@@ -1,0 +1,10 @@
+<h1>Customer Order List</h1>
+
+<b>Status:</b> <%= @order.status %> <br>
+<b>Order by:</b> <%= @order.customer.name %> <br>
+<b>Price:</b> <%= @order.total %> <br>
+<b>Adresss:</b> <%= @order.customer.address %> <br>
+<b>Phone:</b> <%= @order.customer.phone %> <br>
+<b>Email:</b> <%= @order.customer.email %> <br>
+<b>Order date:</b> <%= @order.order_date %> <br>
+<b>Service by:</b> <%= @order.admin.username %> <br>

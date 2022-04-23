@@ -61,6 +61,10 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def customer_order_detail
+    @order = Order.find_by(id: params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order

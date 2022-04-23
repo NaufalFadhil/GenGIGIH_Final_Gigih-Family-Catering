@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/features', to: 'admins#features'
   get '/public/menu/:id', to: 'menus#public_menu_detail'
   get '/customer_order', to: 'orders#customer_order'
+  get '/customer_order/:id', to: 'orders#customer_order_detail'
   
   post '/login', to: 'admins#check_admin'
   
