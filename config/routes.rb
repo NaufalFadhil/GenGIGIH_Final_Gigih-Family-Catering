@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   get '/', to: 'menus#menu_list'
-  
   get '/login', to: 'admins#login'
-  post '/login', to: 'admins#check_admin'
-
   get '/features', to: 'admins#features'
-
   get '/public/menu/:id', to: 'menus#public_menu_detail'
+  get '/customer_order', to: 'orders#customer_order'
+  
+  post '/login', to: 'admins#check_admin'
   
   resources :orders
   resources :order_details
