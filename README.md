@@ -2,10 +2,12 @@
 ### Get started
 ```console
 $ bundle install
-$ bundle db:create
-$ bundle db:migrate
-$ bundle db:seed
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
 ```
+
+Start use `RUN` button on replit or `$ rails server`
 
 ### Administrator Login
 - Username: admin
@@ -13,6 +15,8 @@ $ bundle db:seed
 
 ### Notebook
 Hit `refresh status` Button for handling if customer not paid before 5 PM and it will be change from `NEW` to `CANCELED`
+
+All feature menu at `/features`, or you can login first as administrator 
 
 # Rails on Replit
 
